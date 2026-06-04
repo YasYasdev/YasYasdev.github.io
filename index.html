@@ -1,136 +1,81 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YasYasdev | Portfolio</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: #212529;
-        }
-        .hero-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
-            color: white;
-        }
-        .navbar {
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.8);
-        }
-        .card {
-            border: none;
-            transition: transform 0.3s ease;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .btn-primary {
-            background-color: #6366f1;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 8px;
-        }
-        .github-link {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio website van YasYasdev, software developer student MBO 4.">
+  <meta name="author" content="YasYasdev">
+
+  <title>YasYasdev | Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Devicon voor programmeertaal icons zoals PHP en C++ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Eigen CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">YasYas<span class="text-primary">dev</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-content="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projecten</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://github.com/YasYasdev" target="_blank">GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#home">
+        YasYas<span class="text-primary">dev</span>
+      </a>
 
-    <!-- Hero Section -->
-    <header class="hero-section text-center">
-        <div class="container">
-            <img src="https://github.com/YasYasdev.png" alt="YasYasdev Profile" class="rounded-circle mb-4 border border-4 border-white" width="150">
-            <h1 class="display-3 fw-bold">Hallo, ik ben YasYasdev</h1>
-            <p class="lead mb-5">Full-stack developer met een passie voor schone code en moderne interfaces.</p>
-            <a href="https://github.com/YasYasdev" class="btn btn-light btn-lg px-5 shadow">Mijn Werk Bekijken</a>
-        </div>
-    </header>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav" 
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Menu openen">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5 fw-bold">Recente Projecten</h2>
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-code-slash fs-2 text-primary me-3"></i>
-                            <h5 class="mb-0 fw-bold">Web Applicatie</h5>
-                        </div>
-                        <p class="text-muted">Een interactieve app gebouwd met moderne frameworks en API integraties.</p>
-                        <a href="#" class="mt-auto text-primary text-decoration-none fw-semibold">Lees meer &rarr;</a>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-database fs-2 text-primary me-3"></i>
-                            <h5 class="mb-0 fw-bold">Backend API</h5>
-                        </div>
-                        <p class="text-muted">Robuuste en schaalbare backend systemen geoptimaliseerd voor snelheid.</p>
-                        <a href="#" class="mt-auto text-primary text-decoration-none fw-semibold">Lees meer &rarr;</a>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100 p-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <i class="bi bi-phone fs-2 text-primary me-3"></i>
-                            <h5 class="mb-0 fw-bold">Mobile First Design</h5>
-                        </div>
-                        <p class="text-muted">Responsive designs die perfect werken op elk apparaat en schermformaat.</p>
-                        <a href="#" class="mt-auto text-primary text-decoration-none fw-semibold">Lees meer &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-semibold">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5 mt-5">
-        <div class="container text-center">
-            <p class="mb-3">Gemaakt door **YasYasdev** &copy; 2026</p>
-            <div class="fs-3">
-                <a href="https://github.com/YasYasdev" class="text-white me-3"><i class="bi bi-github"></i></a>
-                <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
-            </div>
-        </div>
-    </footer>
+          <li class="nav-item">
+            <a class="nav-link" href="#over-mij">Over mij</a>
+          </li>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+          <li class="nav-item">
+            <a class="nav-link" href="#projecten">Projecten</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio-site">Over deze site</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="btn btn-primary ms-lg-3 mt-2 mt-lg-0" href="https://github.com/YasYasdev" target="_blank" rel="noopener">
+              <i class="bi bi-github me-1"></i> GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
