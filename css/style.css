@@ -1,0 +1,44 @@
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #a855f7;
+  --dark-color: #111827;
+  --light-bg: #f8f9fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #212529;
+  background-color: var(--light-bg);
+}
+
+.fw-black {
+  font-weight: 900;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.profile-img {
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+}
+
+.nav-link {
+  color: #212529;
+}
+
+
