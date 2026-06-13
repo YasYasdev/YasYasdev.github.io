@@ -1,0 +1,382 @@
+/* =========================
+   THEME (Stake-ish)
+========================= */
+:root{
+  --bg: #0b1220;
+  --topbar: #0f172a;
+  --panel: #0f172a;
+  --card: #111827;
+  --input: #0b1220;
+  --border: #1e293b;
+  --border2: #243247;
+
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --green: #22c55e;
+  --red: #ef4444;
+
+  --r: 16px;
+  --r2: 12px;
+}
+
+/* =========================
+   RESET + BASE
+========================= */
+*{ box-sizing:border-box; }
+
+html, body{ height:100%; }
+
+body{
+  margin:0;
+  background: radial-gradient(1200px 700px at 50% 20%, #0f1b33 0%, var(--bg) 55%, #070b14 100%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* =========================
+   WRAPPER / PAGE LAYOUT
+========================= */
+.wrapper{
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 18px;
+}
+
+/* 
+   HEADER (GRID)
+ */
+header{
+  display:grid;
+  grid-template-columns: auto 1fr auto;
+  align-items:center;
+  gap: 14px;
+
+  background: rgba(17, 24, 39, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px 16px;
+  backdrop-filter: blur(8px);
+}
+
+.logo{
+  height: 34px;
+  width: auto;
+  display:block;
+}
+
+/* wallet */
+.wallet-bar{
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 10px 14px;
+}
+
+.balance{
+  display:flex;
+  align-items:center;
+  gap: 8px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   MAIN (GRID) - left / right
+========================= */
+.layout{
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap: 18px;
+  align-items: start;
+
+  /* geeft casino gevoel  */
+  align-self: center;
+}
+
+/* panels */
+.left-panel,
+.right-panel{
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 16px;
+  backdrop-filter: blur(6px);
+}
+
+/* 
+   LEFT PANEL (cards)
+*/
+.left-panel{
+  display:grid;
+  gap: 14px;
+}
+
+.bet-box,
+.profit-box{
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 14px;
+}
+
+.bet-header,
+.profit-header{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.coin-amount{
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* bet input row */
+.bet-input-row{
+  display:grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+}
+
+#betInput{
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 10px 12px;
+  color: var(--text);
+  outline: none;
+  font-weight: 700;
+}
+
+#betInput:focus{
+  border-color: #2d3d57;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.small-btn{
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  color: var(--text);
+  padding: 0 12px;
+  cursor:pointer;
+  font-weight: 800;
+}
+
+.small-btn:hover{
+  background: #0f1a2e;
+  border-color: #2d3d57;
+}
+
+.bet-btn{
+  margin-top: 12px;
+  width: 100%;
+  border: none;
+  border-radius: var(--r2);
+  padding: 12px 14px;
+
+  background: linear-gradient(180deg, #32d16d 0%, var(--green) 100%);
+  color: #052e16;
+  font-weight: 900;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+}
+
+.bet-btn:hover{ filter: brightness(0.97); }
+.bet-btn:active{ transform: translateY(1px); }
+
+/* profit display */
+.profit-display{
+  background: var(--input);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+
+/* 
+   RIGHT PANEL (grid rows)
+ */
+.right-panel{
+  display:grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 18px;
+  min-height: 620px;
+}
+
+/* roll history top-right */
+.history-panel{
+  display:grid;
+  justify-items:end;
+}
+
+.roll-history{
+  display:grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 8px;
+  align-items:center;
+}
+
+/* (optional) how pills could look later */
+.roll-history .pill{
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 800;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* slider section centered */
+.slider-panel{
+  display:grid;
+  place-content: center;
+  justify-items: center;
+  gap: 14px;
+}
+
+.slider-marks,
+.slider-box{
+  width: min(820px, 100%);
+}
+
+.slider-marks{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* result box */
+.result-box{
+  width: min(420px, 100%);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 14px;
+  text-align:center;
+  display:grid;
+  gap: 8px;
+}
+
+.result-label{
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.result-value{
+  font-size: 42px;
+  font-weight: 1000;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.result-status{
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* win/lose state (later via JS classes) */
+.result-box.win{ border-color: rgba(34,197,94,0.55); }
+.result-box.lose{ border-color: rgba(239,68,68,0.55); }
+
+/* slider */
+#targetSlider{
+  width: 100%;
+  accent-color: var(--green);
+}
+
+/* 
+   STATS
+ */
+.stats-row{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat-box{
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid var(--border2);
+  border-radius: var(--r);
+  padding: 12px;
+}
+
+.stat-label{
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.stat-input{
+  background: rgba(2, 6, 23, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 10px 12px;
+
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items:center;
+}
+
+.stat-input input{
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-weight: 900;
+}
+
+.suffix{
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.clickable{ cursor:pointer; }
+.clickable:hover{
+  border-color: #334155;
+}
+
+/* 
+   FOOTER
+ */
+footer{
+  text-align:center;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 18px 0 28px;
+}
+
+/* 
+   RESPONSIVE
+ */
+@media (max-width: 900px){
+  .layout{
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel{
+    min-height: auto;
+  }
+
+  .history-panel{
+    justify-items:start;
+  }
+
+  .stats-row{
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yaseen - Dice</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <img src="../img/Logo.png" alt="Logo" class="logo" />
+
+        <!-- Wallet Bar -->
+        <div class="wallet-bar">
+          <div class="balance">
+            €<span id="balance">100</span>
+            <span class="coin">🪙</span>
+          </div>
+           <button id="addCreditsBtn" class="add-credits-btn">+ Add Credits</button>
+        </div>
+      </header>
+
+      <main class="layout">
+        <!-- LINKS -->
+        <aside class="left-panel">
+          <div class="bet-box">
+            <div class="bet-header">
+              <span>Bet Amount:</span>
+              <span class="coin-amount"><span id="coinValue">0</span> 🪙</span>
+            </div>
+
+            <div class="bet-input-row">
+              <input type="number" id="betInput" value="0" min="0" step="1" />
+              <button class="small-btn" id="halfBtn">½</button>
+              <button class="small-btn" id="doubleBtn">2×</button>
+            </div>
+            <!--Bet btn-->
+            <button class="bet-btn">Bet</button>
+          </div>
+          <!--Profit Box-->
+          <div class="profit-box">
+            <div class="profit-header">
+              <span>Profit On Win</span>
+              <span class="coin-amount"><span id="profitCoin">0</span> 🪙</span>
+            </div>
+            <!--Profit Display-->
+            <div class="profit-display">
+              <span id="profitValue">0</span>
+            </div>
+          </div>
+        </aside>
+
+        <!-- RECHTS -->
+        <section class="right-panel">
+          <div class="history-panel">
+            <!--Roll History-->
+            <div class="roll-history" id="rollHistory"></div>
+          </div>
+
+          <div class="slider-panel">
+            <!--Slider Marks-->
+            <div class="slider-marks">
+              <span>25</span><span>50</span><span>75</span><span>100</span>
+            </div>
+            <!--Result Box Rolled-->
+            <div class="result-box" id="resultBox">
+              <div class="result-label">Rolled</div>
+              <div class="result-value" id="rolledValue">-</div>
+              <div class="result-status" id="resultStatus">Place a bet</div>
+            </div>
+
+            <!--Slider-->
+            <div class="slider-box">
+              <input
+                type="range"
+                id="targetSlider"
+                min="1"
+                max="99"
+                value="50"
+                step="1"
+              />
+            </div>
+          </div>
+
+          <div class="stats-panel">
+            <div class="stats-row">
+              <div class="stat-box">
+                <!--multiplier see-->
+                <div class="stat-label">Multiplier</div>
+                <div class="stat-input">
+                  <input id="multiplierOut" type="text" value="1" readonly />
+                </div>
+              </div>
+
+              <div class="stat-box clickable" id="rollMode">
+                <!--roll under/over-->
+                <div class="stat-label">Roll Over</div>
+                <div class="stat-input">
+                  <input id="rollOverOut" type="text" value="50" readonly />
+                </div>
+              </div>
+
+              <div class="stat-box">
+                <!--win chance see %%-->
+                <div class="stat-label">Win Chance</div>
+                <div class="stat-input">
+                  <input id="winChanceOut" type="text" value="50" readonly />
+                  <span class="suffix">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--Footer-->
+    <footer>
+      <p>© 2026 YDice. All rights reserved.</p>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,13 +1,19 @@
 {
 	"folders": [
 		{
-			"name": "YasYasdev.github.io",
 			"path": "."
 		},
 		{
-			"name": "sd25-p03-proj-mon-in-apex-solutions",
-			"path": "../../../../../xampp/htdocs/sd25-p03-proj-mon-in-apex-solutions"
+			"path": "../../../Desktop/Yaseen - Dice"
+		},
+		{
+			"path": "../../../Desktop/sd25-p03-proj-mon-in-apex-solutions-main"
+		},
+		{
+			"path": "../../../Desktop/New folder (2)/School-J/sd25-pofo-p02-portfolio-YasYasdev"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "YasYasdev.github.io"
+	}
 }

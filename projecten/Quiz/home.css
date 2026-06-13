@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #111, #363434);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== GRID CONTAINER ===== */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 3fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    ". hd hd hd ."
+    ". btn btn btn .";
+  gap: 40px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ===== AREAS ===== */
+.hd {
+  grid-area: hd;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.button {
+  grid-area: btn;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== HEADER STYLING ===== */
+.hd h1 {
+  color: #8B0000;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.hd p {
+  color: #444;
+  font-size: 20px;
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 18px 40px;
+  font-size: 1.3rem;
+  background: #8B0000;
+  color: white;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #a30000;
+  transform: translateY(-3px);
+}
+
+

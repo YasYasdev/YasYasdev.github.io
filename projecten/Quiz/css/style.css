@@ -1,0 +1,128 @@
+/* ===== BASIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #c7363b, #cea51d);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 500px;
+}
+
+/* ===== CARD (DE DOOS) ===== */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px;
+  text-align: center;
+}
+
+/* ===== TITELS & VRAAG ===== */
+h1, h2 {
+  color: #ff4d6d;
+  margin-bottom: 15px;
+}
+
+.vraag {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* ===== ANTWOORDEN ===== */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.box {
+  padding: 15px;
+  border: 2px solid #444;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.box:hover {
+  background: #ffe2e7;
+}
+
+/* ===== GOED / FOUT ===== */
+.rood {
+  background: #ff6b6b;
+  color: white;
+}
+
+.green {
+  background: #4cd137;
+  color: white;
+}
+
+/* ===== KNOPPEN ===== */
+.btn {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.homebtn {
+ margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+/* ===== Knoppen cursor = muis change naar wijsvinger ===== */
+.pvolgende {
+  background: #494646;
+  color: white;
+  cursor: pointer;
+}
+
+.pvorige {
+  background: #494646;
+  color: white;
+  cursor: pointer;
+}
+
+.reset {
+  background: #494646;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== RESULTAAT ===== */
+#einde {
+  font-size: 1.5rem;
+  color: #ff4d6d;
+}
+
+/* ===== AFBEELDING BIJ VRAAG ===== */
+.vraag-img {
+  width: 100%;              /* altijd zo breed als de card */
+  max-height: 250px;        /* vaste hoogte-limiet */
+  object-fit: cover;        /* snijdt netjes bij zonder vervormen */
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #444;
+}
+
+/* ===== Counter ===== */
+.counter {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 15px;
+}
