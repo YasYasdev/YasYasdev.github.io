@@ -52,14 +52,48 @@
     try { localStorage.setItem('portfolio-theme', root.dataset.theme); } catch { /* Theme still works without storage. */ }
   });
   let pointerFrame = 0;
+  let targetX = innerWidth * .65;
+  let targetY = innerHeight * .35;
+  let currentX = targetX;
+  let currentY = targetY;
+  let lastFrameTime = 0;
+
+  function drawAmbient(time) {
+    const delta = lastFrameTime ? Math.min(time - lastFrameTime, 64) : 16;
+    lastFrameTime = time;
+    const easing = 1 - Math.exp(-delta / 95);
+    currentX += (targetX - currentX) * easing;
+    currentY += (targetY - currentY) * easing;
+    root.style.setProperty('--pointer-x', `${currentX.toFixed(2)}px`);
+    root.style.setProperty('--pointer-y', `${currentY.toFixed(2)}px`);
+    root.style.setProperty('--mx', `${((currentX / innerWidth - .5) * 55).toFixed(2)}px`);
+    root.style.setProperty('--my', `${((currentY / innerHeight - .5) * 45).toFixed(2)}px`);
+    pointerFrame = Math.abs(targetX - currentX) + Math.abs(targetY - currentY) > .2
+      ? requestAnimationFrame(drawAmbient) : 0;
+    if (!pointerFrame) lastFrameTime = 0;
+  }
+
   window.addEventListener('pointermove', event => {
-    if (motion.matches || !pointer.matches || pointerFrame) return;
-    pointerFrame = requestAnimationFrame(() => {
-      root.style.setProperty('--mx', `${(event.clientX / innerWidth - .5) * 100}px`);
-      root.style.setProperty('--my', `${(event.clientY / innerHeight - .5) * 80}px`);
-      pointerFrame = 0;
-    });
+    if (motion.matches || !pointer.matches || event.pointerType === 'touch') return;
+    targetX = event.clientX;
+    targetY = event.clientY;
+    if (!pointerFrame) pointerFrame = requestAnimationFrame(drawAmbient);
   }, { passive: true });
+
+  function resetAmbient() {
+    cancelAnimationFrame(pointerFrame);
+    pointerFrame = 0;
+    lastFrameTime = 0;
+    targetX = currentX = innerWidth * .65;
+    targetY = currentY = innerHeight * .35;
+    ['--pointer-x', '--pointer-y', '--mx', '--my'].forEach(name => root.style.removeProperty(name));
+  }
+  motion.addEventListener('change', resetAmbient);
+  pointer.addEventListener('change', resetAmbient);
+  window.addEventListener('resize', resetAmbient);
+  window.addEventListener('blur', resetAmbient);
+  document.documentElement.addEventListener('pointerleave', resetAmbient);
+  document.addEventListener('visibilitychange', () => { if (document.hidden) resetAmbient(); });
   const progress = document.querySelector('.reading-progress');
   const links = [...document.querySelectorAll('.nav-link[href^="#"]')];
   const sections = links.map(link => document.querySelector(link.hash));
