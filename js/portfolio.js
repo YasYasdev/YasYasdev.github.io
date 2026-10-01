@@ -132,6 +132,25 @@
       }
     });
   }
+  // Replay the shine only when an individual skill enters the viewport.
+  if ('IntersectionObserver' in window) {
+    const shineObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => entry.target.classList.toggle('skill-shine', entry.isIntersecting && !motion.matches));
+    }, { threshold: .6 });
+    document.querySelectorAll('.skill-tile').forEach(tile => shineObserver.observe(tile));
+    motion.addEventListener('change', () => {
+      if (motion.matches) document.querySelectorAll('.skill-shine').forEach(tile => tile.classList.remove('skill-shine'));
+    });
+  }
+  const contactForm = document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contact-status');
+  document.getElementById('contact-submit').disabled = false;
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+    contactStatus.hidden = false;
+    contactStatus.textContent = 'Je bericht is ingevuld, maar nog niet verstuurd. Het formulier is nog niet aangesloten. Stuur voorlopig een e-mail naar yashawas009@outlook.com. Je tekst blijft hier staan zolang je deze pagina niet herlaadt.';
+  });
+  contactForm.addEventListener('input', () => { contactStatus.hidden = true; });
   document.querySelectorAll('.project-image').forEach(image => { image.loading = 'lazy'; image.decoding = 'async'; });
   document.querySelectorAll('.navbar a[href^="#"]').forEach(link => link.addEventListener('click', () => {
     const menu = document.getElementById('navbarNav');
